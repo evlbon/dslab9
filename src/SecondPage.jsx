@@ -10,7 +10,6 @@ const SecondPage = () => {
             "method": "Get",
             "url": 'https://api.thecatapi.com/v1/images/search',
         }).then(r=>{
-            console.log(r.data[0].url);
             setCat(r.data[0].url)
         }).catch(e=>{
             console.log(e)

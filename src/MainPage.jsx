@@ -4,28 +4,28 @@ import {withRouter} from 'react-router-dom';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-
+const defaultSelectedKey = (currentPath) => {
+    // eslint-disable-next-line default-case
+    switch (currentPath) {
+        case '/firstPage/':
+            return '1';
+        case '/secondPage/':
+            return '2';
+        case '/thirdPage/':
+            return '3';
+        default:
+            return '3';
+    }
+};
 const MainPage = ({history, children}) => {
-    const [currentPath, setCurrentPath] = useState(history.location.pathname);
+    const [current, setCurrent] = useState(defaultSelectedKey(history.location.pathname));
     useEffect(()=>{
         if(history.location.pathname === '/')
             history.push('/thirdPage/');
-        setCurrentPath(history.location.pathname)
+        setCurrent(defaultSelectedKey(history.location.pathname));
     },[history.location.pathname]);
 
-    const defaultSelectedKey = () => {
-        // eslint-disable-next-line default-case
-        switch (currentPath) {
-            case '/firstPage/':
-                return '1';
-            case '/secondPage/':
-                return '2';
-            case '/thirdPage/':
-                return '3';
-            default:
-                return '3';
-        }
-    };
+
 
     return <Layout>
         <Header className="header">
@@ -33,7 +33,8 @@ const MainPage = ({history, children}) => {
             <Menu
                 theme="dark"
                 mode="horizontal"
-                defaultSelectedKeys={defaultSelectedKey()}
+                defaultSelectedKeys={[current]}
+                selectedKeys={[current]}
                 style={{ lineHeight: '64px' }}
             >
                 <Menu.Item key="3" onClick={()=>{history.push('/thirdPage/');}}>Main</Menu.Item>

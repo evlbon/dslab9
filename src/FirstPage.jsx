@@ -16,7 +16,6 @@ const FirstPage = () => {
             "method": "Get",
             "url": 'https://api.imgflip.com/get_memes',
         }).then(r=>{
-            console.log(r.data.data.memes);
             setMeme(r.data.data.memes);
         }).catch(e=>{
             console.log(e)

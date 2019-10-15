@@ -1,7 +1,8 @@
 import React from "react";
 import {Icon} from "antd";
+import {withRouter} from 'react-router-dom';
 
-const ThirdPage = () => {
+const ThirdPage = ({history}) => {
     return <div>
         <div style={{
             fontSize: 'large',
@@ -25,6 +26,7 @@ const ThirdPage = () => {
         </div>
 
         <div className={'ant-btn demo rainbow'}
+             onClick={()=>{history.push('/firstPage/')}}
              style={{
                  height: '30vh',
                  textAlign: "center",
@@ -37,6 +39,7 @@ const ThirdPage = () => {
             <Icon type="double-left" />MEMES<Icon type="smile" theme="outlined" spin/>
         </div>
         <div className={'ant-btn demo rainbow'}
+             onClick={()=>{history.push('/secondPage/')}}
              style={{
                  height: '30vh',
                  textAlign: "center",
@@ -51,4 +54,4 @@ const ThirdPage = () => {
     </div>
 };
 
-export default ThirdPage
+export default withRouter(ThirdPage)
