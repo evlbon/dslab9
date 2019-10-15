@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.logo{
+  background-image: url('https://avatanplus.com/files/resources/original/5a5e5b230aefb161009400e5.png');
+  height: 64px;
+  width: 64px;
+  float: left;
+  background-size: cover;
+}

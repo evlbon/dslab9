@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './lol.css'
 import {BrowserRouter as Router} from "react-router-dom";
 import BaseRouter from "./router";
 

@@ -9,7 +9,7 @@ const MainPage = ({history, children}) => {
     const [currentPath, setCurrentPath] = useState(history.location.pathname);
     useEffect(()=>{
         if(history.location.pathname === '/')
-            history.push('/firstPage/');
+            history.push('/thirdPage/');
         setCurrentPath(history.location.pathname)
     },[history.location.pathname]);
 
@@ -23,7 +23,7 @@ const MainPage = ({history, children}) => {
             case '/thirdPage/':
                 return '3';
             default:
-                return '1';
+                return '3';
         }
     };
 
@@ -36,12 +36,12 @@ const MainPage = ({history, children}) => {
                 defaultSelectedKeys={defaultSelectedKey()}
                 style={{ lineHeight: '64px' }}
             >
+                <Menu.Item key="3" onClick={()=>{history.push('/thirdPage/');}}>Main</Menu.Item>
                 <Menu.Item key="1" onClick={()=>{history.push('/firstPage/');}}>Memes</Menu.Item>
                 <Menu.Item key="2" onClick={()=>{history.push('/secondPage/');}}>Cats</Menu.Item>
-                <Menu.Item key="3" onClick={()=>{history.push('/thirdPage/');}}>Main</Menu.Item>
             </Menu>
         </Header>
-        <Layout>
+        <Layout style={{ minHeight: '100vh', }}>
             <Layout style={{ padding: '0 24px 24px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>DS</Breadcrumb.Item>
@@ -60,7 +60,7 @@ const MainPage = ({history, children}) => {
                         background: '#fff',
                         padding: 24,
                         margin: 0,
-                        minHeight: '100vh',
+                        minHeight: '10vh',
                     }}
                 >
                     {children}
