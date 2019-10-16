@@ -28,26 +28,26 @@ const ThirdPage = ({history}) => {
         <div className={'ant-btn demo rainbow'}
              onClick={()=>{history.push('/firstPage/')}}
              style={{
-                 height: '30vh',
+                 height: '20vw',
                  textAlign: "center",
-                 padding: '6vh 0',
-                 fontSize: '10vh',
-                 margin: '5vh',
+                 padding: '5vw 0',
+                 fontSize: '6vw',
+                 margin: '5%',
                  float: "left",
-                 width: '40vw',
+                 width: '40%',
              }}>
             <Icon type="double-left" />MEMES<Icon type="smile" theme="outlined" spin/>
         </div>
         <div className={'ant-btn demo rainbow'}
              onClick={()=>{history.push('/secondPage/')}}
              style={{
-                 height: '30vh',
+                 height: '20vw',
                  textAlign: "center",
-                 padding: '6vh 0',
-                 fontSize: '10vh',
-                 margin: '5vh',
+                 padding: '5vw 0',
+                 fontSize: '6vw',
+                 margin: '5%',
                  float: "right",
-                 width: '40vw',
+                 width: '40%',
              }}>
             <Icon type="smile" theme="outlined" spin />CATS<Icon type="double-right" />
         </div>
