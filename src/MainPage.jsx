@@ -48,11 +48,11 @@ const MainPage = ({history, children}) => {
                     <Breadcrumb.Item>DS</Breadcrumb.Item>
                     <Breadcrumb.Item>Eugene Bondarev</Breadcrumb.Item>
                     <Breadcrumb.Item>{
-                        defaultSelectedKey() === '1'?
+                        current === '1'?
                             'Memes':
-                            defaultSelectedKey() === '2'?
+                            current=== '2'?
                                 'Cats':
-                                defaultSelectedKey() === '3'?
+                                current === '3'?
                                     'Main':'kek'
                     }</Breadcrumb.Item>
                 </Breadcrumb>
